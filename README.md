@@ -36,7 +36,7 @@ The **Pokémon Highrise Bot** is an interactive bot designed for the **Highrise 
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/haveyoumetmiz/HighrisePokemonBot.git>
    cd pokemon-highrise-bot
    ```
 2. Install required dependencies:
