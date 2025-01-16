@@ -1,0 +1,35 @@
+# The command that runs the program. If the interpreter field is set, it will have priority and this run command will do nothing
+run = "highrise main:Bot 6502bfb0169f53d7b8484c05 641e55366ab782f9c04de1a9dc1d78439d89db9e14e0a34dac58330c27e493a3"
+# The primary language of the repl. There can be others, though!
+language = "python3"
+entrypoint = "run.py"
+# A list of globs that specify which files and directories should
+# be hidden in the workspace.
+hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
+modules = ["pyright-extended:v1-20230707-0c33b22", "python-3.10"]
+
+# Specifies which nix channel to use when building the environment.
+[nix]
+channel = "stable-22_11"
+
+[env]
+
+# Enable unit tests. This is only supported for a few languages.
+[unitTest]
+language = "python3"
+
+# These are the files that need to be preserved when this 
+# language template is used as the base language template
+# for Python repos imported from GitHub
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config", "venv"]
+
+[deployment]
+run = ["sh", "-c", "python3 main.py"]
+
+[[ports]]
+localPort = 5000
+
+[[ports]]
+localPort = 8080
+externalPort = 80
